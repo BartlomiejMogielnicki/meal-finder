@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root {
+    --meal-icon-height: 175px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -15,6 +19,8 @@ body {
 }
 
 .container {
+    margin: auto;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,5 +74,73 @@ button:focus {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     cursor: pointer;
+}
 
+.search-title {
+    font-size: 1.1em;
+    padding: 20px;
+    letter-spacing: 1px;
+}
+
+.meals-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.meal {
+    position: relative;
+    width: var(--meal-icon-height);
+    height: var(--meal-icon-height);
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.meal:hover h3 {
+    opacity: 1;
+}
+
+.meal img {
+    width: 100%;
+    height: 100%;
+}
+
+.meal h3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: var(--meal-icon-height);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: .3s;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+@media (max-width: 800px) {
+    .meals-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .meals-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    :root {
+        --meal-icon-height: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    .meals-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    :root {
+        --meal-icon-height: 300px;
+    }
 }
