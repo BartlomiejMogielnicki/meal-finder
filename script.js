@@ -68,7 +68,7 @@ const updateDomMeal = (mealData) => {
             <p>${mealData.strInstructions}</p>
         </div>
         <h2>Ingredients</h2>
-        <ul>
+        <ul class="ingredients">
             ${ingredients.map(item =>
                 `<li>${item}</li>`).join('')}
         </ul>
