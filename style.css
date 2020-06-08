@@ -97,7 +97,7 @@ button:focus {
     border: 2px solid white;
 }
 
-.meal:hover h3 {
+.meal:hover .meal-info {
     opacity: 1;
 }
 
@@ -106,17 +106,20 @@ button:focus {
     height: 100%;
 }
 
-.meal h3 {
+.meal-info {
     position: absolute;
     top: 0;
     left: 0;
-    line-height: var(--meal-icon-height);
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     opacity: 0;
     transition: .3s;
     background-color: rgba(0, 0, 0, .7);
+
 }
 
 @media (max-width: 800px) {
