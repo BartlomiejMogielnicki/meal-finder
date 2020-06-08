@@ -6,10 +6,15 @@ const mealsContainer = document.getElementById('meals-container');
 const pickedMeal = document.getElementById('picked-meal-container');
 
 
+// Clear meal description DOM
+const clearDOM = () => {
+    pickedMeal.innerHTML = "";
+}
+
 // Search meals
 const searchMeals = (e) => {
     e.preventDefault();
-
+    clearDOM();
     const input = search.value;
 
     // Check if input is not empty
@@ -87,12 +92,23 @@ const getSpecificMeal = (mealID) => {
         })
 }
 
-
-// Add events
-
+// Event listeners
 submit.addEventListener('submit', searchMeals);
 
 mealsContainer.addEventListener('click', (e) => {
     const mealID = e.target.getAttribute('data-mealID');
     getSpecificMeal(mealID)
+})
+
+randomBtn.addEventListener('click', () => {
+    fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+        .then(response => response.json())
+        .then(data => {
+            const mealData = data.meals[0];
+
+            mealsContainer.innerHTML = "";
+            pickedMeal.innerHTML = "";
+
+            updateDomMeal(mealData);
+        })
 })

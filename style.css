@@ -129,6 +129,7 @@ button:focus {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-bottom: 20px;
 }
 
 .picked-meal-container h2 {
