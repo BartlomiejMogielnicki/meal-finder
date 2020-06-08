@@ -13,13 +13,14 @@
     <div class="container">
         <h1>Meal Finder</h1>
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search for meals or keywords">
+            <input type="text" class="search-input" id="search-input" placeholder="Search for meals or keywords">
             <button type="submit" class="search-btn" id="search-btn"><i class="fas fa-search"></i></button>
             <button class="random-btn" id="random-btn"><i class="fas fa-random"></i></button>
         </div>
 
-        <div class="meals-container"></div>
-        <div class="meal-description"></div>
+        <div class="search-title" id="search-title"></div>
+        <div class="meals-container" id="meals-container"></div>
+        <div class="picked-meal-container" id="picked-meal-container"></div>
     </div>
     <script src="script.js"></script>
 </body>
